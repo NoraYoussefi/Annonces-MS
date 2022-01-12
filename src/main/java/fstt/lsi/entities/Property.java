@@ -23,17 +23,5 @@ public class Property {
 	private Type myType;
 	private Methode myMethod;
 	
-//	private Collection<String> method = 
-//		    new ArrayList<String>(Arrays.asList(new String[] {
-//		    		"private",
-//		    	    "public",
-//		    	     }));
-//	private Collection<String> type = 
-//		    new ArrayList<String>(Arrays.asList(new String[] {
-//		    		"land",
-//		    	    "house",
-//		    	    "appartement",
-//		    	    "immeuble",
-//		    	    "commercial listing" }));
 
 }

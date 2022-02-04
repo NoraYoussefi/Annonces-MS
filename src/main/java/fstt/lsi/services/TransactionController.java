@@ -33,7 +33,7 @@ public class TransactionController {
 	public Transaction saveTransaction(@RequestBody Transaction transaction) {
 		 return transactionMetier.saveTransaction(transaction);
 	}
-//	@GetMapping("/consulterById")
+//	@GetMapping("/consulterById/{id}")
 //	public List<Transaction> showPropertyListByUserId(String transactionId) {
 //		return transactionRepository.findAllById(transactionId);
 //	}

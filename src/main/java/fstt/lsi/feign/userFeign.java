@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(name = "AUTH-SERVICE")
 public interface userFeign {
 
-	@GetMapping(value = "/connexion/getid")
+	@GetMapping(value = "/api/auth/getid")
 	String getUserId(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 }

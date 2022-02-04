@@ -17,10 +17,14 @@ public class Property {
 	private String title;
 	private String image;
 	private String description;
+	//private String legalDoc;
+	//private String pkReciever;
+	//private String govTitle;
+	//private Boolean verified;
 	private String address;
 	private double price;
 	private String userId;
-	private Type myType;
+	private Category myType;
 	private Methode myMethod;
 	
 

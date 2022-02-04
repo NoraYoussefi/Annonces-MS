@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import fstt.lsi.entities.Transaction;
 @Repository
 public interface TransactionRepository extends MongoRepository<Transaction, String> {
-	Transaction add(Transaction transaction);
+//	Transaction add(Transaction transaction);
 	List<Transaction> findAll();
 	//List<Transaction> findAllById(String transactionId);
 }

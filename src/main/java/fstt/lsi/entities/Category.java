@@ -1,12 +1,13 @@
 package fstt.lsi.entities;
 
-public enum Type {
+public enum Category {
 
 	
 	    land,
 	    house,
 	    appartement,
-	    immeuble,
-	    commercialListing 
+	    Commercial,
+  	    Complex_Building 
 		
 }
+

@@ -15,17 +15,18 @@ public class Property {
 	@Id
 	private long propertyId;
 	private String title;
-	private String image;
-	private String description;
-	//private String legalDoc;
-	//private String pkReciever;
-	//private String govTitle;
-	//private Boolean verified;
-	private String address;
-	private double price;
+	private String images;
+	private String desc;
+	private String legaldocs;
+	private String publicKey;
+	private String govTitle;
+	private Boolean verified=false;
+	private Boolean sold=false;
+	private String physcial_address;
+	private double priceusd;
 	private String userId;
-	private Category myType;
-	private Methode myMethod;
+	private Category category;
+	private Methode method;
 	
 
 }

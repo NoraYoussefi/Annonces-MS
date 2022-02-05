@@ -47,20 +47,82 @@ public class AnnonceController {
 		String id = userfeign.getUserId(request.getHeader("Authorization"));
 		property.setUserId(id);
 		property.setPropertyId(i++);
-		 return propertyMetier.saveProperty(property);
-		//return userfeign.getUserId(request.getHeader("Authorization"));
+		return propertyMetier.saveProperty(property);
 	}
 
+	
 	@GetMapping("/consulterById")
 	public List<Property> showPropertyListByUserId(HttpServletRequest request) {
 		String id = userfeign.getUserId(request.getHeader("Authorization"));
-		return propertyRepository.findAllByUserId(id);
+		return propertyRepository.findAllByUserId(id); //must be changed to metier
 	}
+	
 	
 	@GetMapping("/consulter")
 	public List<Property> showAllProperties() {
-		return propertyRepository.findAll();
+		return propertyRepository.findAll();  //must be changed to metier
 	}
+	
+	
+	@GetMapping("/verified")
+	public List<Property> getAllVerifiedProducts(){
+		return propertyMetier.findPropertyByVerified();
+	}
+	
+	
+	@GetMapping("/nonverified")
+	public List<Property> getAllNonVerifiedProducts(){
+		return propertyMetier.findNonVerified();
+	}
+	
+	
+	@GetMapping("/sold")
+	public List<Property> getSoldProducts(){
+		return propertyMetier.findSoldProducts();
+	}
+	
+	
+	@GetMapping("/nonsold")
+	public List<Property> getNonSoldProducts(){
+		return propertyMetier.findNonSoldProducts();
+	}
+	
+	
+	@GetMapping("/usersold")
+	public List<Property> findSoldByUserId(HttpServletRequest request) {
+		String id = userfeign.getUserId(request.getHeader("Authorization"));
+		return propertyMetier.findSoldByUserId(id) ;//must be changed to metier
+	}
+	
+	@GetMapping("/usernonsold")
+	public List<Property> findNonSoldByUserId(HttpServletRequest request) {
+		String id = userfeign.getUserId(request.getHeader("Authorization"));
+		return propertyMetier.findNonSoldByUserId(id) ;//must be changed to metier
+	}
+	
+	@GetMapping("/userverified")
+	public List<Property> findVerifiedByUserId(HttpServletRequest request) {
+		String id = userfeign.getUserId(request.getHeader("Authorization"));
+		return propertyMetier.findVerifiedByUserId(id) ;//must be changed to metier
+	}
+	
+	@GetMapping("/usernonverified")
+	public List<Property> findNonVerifiedByUserId(HttpServletRequest request) {
+		String id = userfeign.getUserId(request.getHeader("Authorization"));
+		return propertyMetier.findNonVerifiedByUserId(id) ;//must be changed to metier
+	}
+	
+	@GetMapping("/explore")
+	public List<Property> findVerifiedAndNonSold() {
+		return propertyMetier.findVerifiedAndNonSold();//must be changed to metier
+	}
+	
+	
+
+	
+	
+
+	
 
 	 
 }

@@ -31,9 +31,55 @@ public class PropertyMetierImp implements PropertyMetier {
 
 	@Override
 	public List<Property> getPropertyByUser(Long userId){
-	
 		return propertyRepository.findAll();
-		
 	}
+
+	@Override
+	public List<Property> findPropertyByVerified() {
+		return propertyRepository.findByVerified();
+	}
+
+	@Override
+	public List<Property> findNonVerified() {
+		return propertyRepository.findByVerified1();
+	}
+
+	@Override
+	public List<Property> findSoldProducts() {
+		return propertyRepository.findBySold();
+	}
+
+	@Override
+	public List<Property> findNonSoldProducts() {
+		return propertyRepository.findBySold1();
+	}
+
+	@Override
+	public List<Property> findSoldByUserId(String id) {
+		return propertyRepository.findSoldByUserId(id);
+	}
+
+	@Override
+	public List<Property> findNonSoldByUserId(String id) {
+		return propertyRepository.findNonSoldByUserId(id);
+	}
+
+	@Override
+	public List<Property> findVerifiedByUserId(String id) {
+		return propertyRepository.findVerifiedByUserId(id);
+	}
+
+	@Override
+	public List<Property> findNonVerifiedByUserId(String id) {
+		return propertyRepository.findNonVerifiedByUserId(id);
+	}
+
+	@Override
+	public List<Property> findVerifiedAndNonSold() {
+		return propertyRepository.findVerifiedAndNonSold();
+	}
+	
+	
+	
 
 }

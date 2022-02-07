@@ -8,9 +8,10 @@ import fstt.lsi.entities.Transaction;
 
 
 public interface TransactionMetier {
-	public Transaction saveTransaction(Transaction c);
-	public List<Transaction> listAllTransactions();
-	public List<Transaction> getTransactionByUser(Long userId);
 	
+	public Transaction saveTransaction(Transaction t);
+	public List<Transaction> listAllTransactions();
+	public List<Transaction> getTransactionByUser(String address);
+
 
 }

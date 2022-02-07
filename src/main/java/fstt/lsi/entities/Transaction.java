@@ -12,10 +12,10 @@ public class Transaction {
 	
 	@Id
 	private String transactionId;
-	private String byerAddress;
-//	private long propertyId;
-	//many to one
-//	@DBRef
-//	private Property property;
+	private String buyerAddress;
+	private String sellerAddress;
+	private long propertyId;
+	private double priceusd;
 
+	
 }

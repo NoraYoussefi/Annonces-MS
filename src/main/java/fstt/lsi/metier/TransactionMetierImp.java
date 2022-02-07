@@ -1,4 +1,3 @@
-
 package fstt.lsi.metier;
 
 import java.util.List;
@@ -28,9 +27,9 @@ public class TransactionMetierImp implements TransactionMetier{
 
 
 	@Override
-	public List<Transaction> getTransactionByUser(Long userId) {
+	public List<Transaction> getTransactionByUser(String buyerAddress) {
 	
-		return transactionRepository.findAll();
+		return transactionRepository.findAllBybuyerAddress(buyerAddress);
 	}
 
 }

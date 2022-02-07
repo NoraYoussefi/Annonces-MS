@@ -1,6 +1,7 @@
 package fstt.lsi.metier;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -78,6 +79,23 @@ public class PropertyMetierImp implements PropertyMetier {
 	public List<Property> findVerifiedAndNonSold() {
 		return propertyRepository.findVerifiedAndNonSold();
 	}
+
+	@Override
+	public Property getPropertyById(String propertyId) {
+		Optional<Property> prop=propertyRepository.findById(propertyId);
+		if(prop.isEmpty()) {
+			return null;
+		};
+		return prop.get();
+	}
+
+	@Override
+	public List<Property> findVerifiedAndNonSoldByUserId(String id) {
+		return propertyRepository.findVerifiedAndNonSoldByUserId(id);
+	}
+	
+	
+	
 	
 	
 	

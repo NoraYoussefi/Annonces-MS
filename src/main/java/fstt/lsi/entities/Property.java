@@ -13,11 +13,11 @@ import lombok.Data;
 @Document(collection = "properties")
 public class Property {
 	@Id
-	private long propertyId;
+	private String propertyId;
 	private String title;
 	private String images;
 	private String desc;
-	private String legaldocs;
+	private String  legaldocs;
 	private String publicKey;
 	private String govTitle;
 	private Boolean verified=false;
@@ -26,7 +26,6 @@ public class Property {
 	private double priceusd;
 	private String userId;
 	private Category category;
-	private Methode method;
 	
 
 }

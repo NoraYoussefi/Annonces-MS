@@ -2,6 +2,7 @@
 package fstt.lsi.metier;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.Query;
 
@@ -32,5 +33,9 @@ public interface PropertyMetier {
 	public List<Property> findNonVerifiedByUserId(String id);
 	
 	public List<Property> findVerifiedAndNonSold();
+	
+	public Property getPropertyById(String propertyId);
+	
+	public List<Property> findVerifiedAndNonSoldByUserId(String id);
 	
 }

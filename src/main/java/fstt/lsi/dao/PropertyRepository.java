@@ -12,9 +12,10 @@ import org.springframework.stereotype.Repository;
 import fstt.lsi.entities.Property;
 
 @Repository
-public interface PropertyRepository extends MongoRepository<Property, Long> {
+public interface PropertyRepository extends MongoRepository<Property, String> {
 	
 	Property findByPropertyId(Long propertyId);
+	
 	List<Property> findAllByUserId(String id);
 	
 	@Query("{'verified' : true}")
@@ -29,19 +30,25 @@ public interface PropertyRepository extends MongoRepository<Property, Long> {
 	@Query("{'sold' : false}")
 	List<Property> findBySold1();
 	
-	@Query("{'sold' : true}")
+	@Query("{'sold' : true,'userId' : ?0}")
 	List<Property> findSoldByUserId(String id);
 	
-	@Query("{'sold' : false}")
+	@Query("{'sold' : false,'userId' : ?0}")
 	List<Property> findNonSoldByUserId(String id);
 	
-	@Query("{'verified' : true}")
+	@Query("{'verified' : true,'userId' : ?0}")
 	List<Property> findVerifiedByUserId(String id);
 	
-	@Query("{'verified' : false}")
+	@Query("{'verified' : false,'userId' : ?0}")
 	List<Property> findNonVerifiedByUserId(String id);
-	
 	
 	@Query("{'verified' : true,'sold' : false}")
 	List<Property> findVerifiedAndNonSold();
+	
+	@Query("{'verified' : true,'sold' : false,'userId' : ?0}")
+	List<Property> findVerifiedAndNonSoldByUserId(String id);
+	
+	
+	
+	
 }

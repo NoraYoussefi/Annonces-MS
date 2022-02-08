@@ -19,7 +19,7 @@ import fstt.lsi.metier.TransactionMetier;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/transactions")
+@RequestMapping("annonces/transactions")
 public class TransactionController {
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class TransactionController {
 	
 	@Autowired
 	private TransactionMetier transactionMetier;
-	
+		
 	
 
 	@PostMapping("/addTransaction")
